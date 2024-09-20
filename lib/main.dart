@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(providers: [
    ChangeNotifierProvider(create: (context)=>WeatherProvider(),)
     ],
-      builder: (context, child) =>  MaterialApp(
+      builder: (context, child) { return  MaterialApp(
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
         routes: {
@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
           '/save': (context)=> SaveScreen(),
 
         },
-      ),);
+      );
+  },);
   }
 }

@@ -34,6 +34,7 @@ class WeatherProvider extends ChangeNotifier {
     favouriteList.add('$name-$temp-$condition-$icon');
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     sharedPreferences.setStringList('weather', favouriteList);
+    notifyListeners();
   }
 
   Future<void> getFavouriteCity() async {
